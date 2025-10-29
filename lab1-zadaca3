@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<script>
+
+    function groupLogsByType(logs, type){
+
+        let filtered = logs.filter(log => log.type === type);
+
+        console.log(filtered)
+    }
+
+    const logs = [
+        { type: "error", date: "2025-10-20", module: "auth" },
+        { type: "info", date: "2025-10-21", module: "ui" },
+        { type: "error", date: "2025-10-22", module: "database" }
+    ];
+
+    groupLogsByType(logs, "error");
+
+
+</script>
+</body>
+</html>
