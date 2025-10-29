@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<script>
+
+    'use strict';
+
+    function createStringBuilder(string) {
+        let currentString = string;
+
+        return {
+            append: function (str) {
+                currentString += str
+            },
+
+            remove: function (count) {
+                currentString = currentString.substring(0, currentString.length - count)
+            },
+
+            getValue: function (){
+                return currentString;
+            }
+        }
+
+
+    }
+
+
+    const sb = createStringBuilder("Hello");
+
+    sb.append(" Kiki")
+    console.log(sb.getValue());
+
+    sb.remove(5);
+    console.log(sb.getValue());
+
+    sb.append("!");
+    console.log(sb.getValue());
+</script>
+</body>
+</html>
