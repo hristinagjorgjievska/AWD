@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<script>
+
+    function employeesByDepartment(employees, department){
+
+        let filtered = employees.filter(employee => employee.department === department)
+
+        console.log(filtered)
+
+        let sorted = employees.sort((a,b) => b.salary - a.salary)
+
+        let highestSalary = sorted[0].salary;
+
+        for (let i = 0; i < filtered.length; i++) {
+            if (sorted[i].salary === highestSalary){
+                console.log(sorted[i].n)
+            }
+        }
+    }
+
+    const employees = [
+        { name: "Ana", department: "IT", salary: 2500 },
+        { name: "Boris", department: "HR", salary: 2000 },
+        { name: "Cvetan", department: "IT", salary: 3000 },
+        { name: "Dora", department: "IT", salary: 3000 }
+    ];
+
+    employeesByDepartment(employees, "IT");
+
+</script>
+</body>
+</html>
