@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function birthdaysByMonth(employees, month){
+
+        let filtered = employees.filter(employee => employee.birthMonth === month)
+
+        console.log(filtered)
+
+        let sorted = filtered.sort((a,b) => b.birthYear - a.birthYear)
+
+        console.log(sorted)
+    }
+
+
+    const employees = [
+        { name: "Ana", birthDay: 5, birthMonth: 10, birthYear: 1992 },
+        { name: "Boris", birthDay: 20, birthMonth: 10, birthYear: 1985 },
+        { name: "Cvetan", birthDay: 12, birthMonth: 11, birthYear: 1990 }
+    ];
+
+    birthdaysByMonth(employees, 10);
+
+</script>
+</body>
+</html>
