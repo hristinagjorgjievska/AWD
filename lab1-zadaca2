@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Movie{
+        constructor(title, genre, rating) {
+            this.title = title;
+            this.genre = genre;
+            this.rating = rating;
+        }
+    }
+
+    function moviesByGenre(movies, genre){
+        const filtered = movies.filter(movie => movie.genre === genre)
+
+        if (filtered.length === 0){
+            console.log(`No movies found in genre ${genre}`)
+            return
+        }
+
+        filtered.sort((a,b) => b.rating = a.rating)
+
+        const highestRating = filtered[0].rating
+
+        const topMovies = filtered.filter(movie => movie.rating === highestRating)
+
+        console.log(`Top rated ${genre} movies: `)
+        topMovies.forEach(movie => console.log(movie.title))
+    }
+
+    const movies = [
+        new Movie("Titanic", "Drama", 9.2),
+        new Movie("Inception", "Sci-Fi", 9.5),
+        new Movie("Avatar", "Sci-Fi", 9.5),
+        new Movie("The Notebook", "Drama", 8.9),
+        new Movie("Interstellar", "Sci-Fi", 9.3),
+        new Movie("Joker", "Drama", 9.2)
+    ];
+
+    moviesByGenre(movies, "Sci-Fi");
+</script>
+</body>
+</html>
